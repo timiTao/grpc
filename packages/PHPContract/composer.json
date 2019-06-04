@@ -1,0 +1,15 @@
+{
+    "name": "timitao/grpc-php-contract",
+    "require": {
+        "grpc/grpc": "^v1.3.0",
+        "spiral/php-grpc": "^1.0"
+    },
+    "require-dev": {
+        "timitao/grpc-contract": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    }
+}
