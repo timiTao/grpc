@@ -1,3 +1,6 @@
 {
-    "name": "timitao/grpc-contract"
+    "name": "timitao/grpc-contract",
+    "require-dev": {
+        "wikimedia/composer-merge-plugin": "1.4.*"
+    }
 }

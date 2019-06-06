@@ -8,3 +8,9 @@ parameters:
         - 'require-dev'
         - 'autoload'
         - 'autoload-dev'
+
+    directories_to_repositories:
+        packages/Contract: 'git@github.com:timiTao/grpc-contract'
+        packages/PHPContract: 'git@github.com:timiTao/grpc-php-contract'
+        packages/Server: 'git@github.com:timiTao/grpc-php-server'
+        packages/Client: 'git@github.com:timiTao/grpc-php-client.git'

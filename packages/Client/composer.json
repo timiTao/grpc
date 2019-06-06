@@ -3,6 +3,9 @@
     "require": {
         "grpc/grpc": "^v1.3.0"
     },
+    "require-dev": {
+        "wikimedia/composer-merge-plugin": "1.4.*"
+    },
     "scripts": {
         "client": "php -d extension=grpc.so -d extension=protobuf.so client.php"
     },

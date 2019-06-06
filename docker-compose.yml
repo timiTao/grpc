@@ -1,0 +1,21 @@
+version: '2'
+services:
+
+    server:
+        build: ./packages/Server
+        working_dir: ${WORKING_DIR}
+        command: 'rr-grpc serve -v -d'
+        volumes:
+            - ./packages/Server:${WORKING_DIR}
+            - ./:/core
+
+    php_contract:
+        build: ./packages/PHPContract
+        volumes:
+            - ./packages/PHPContract:${WORKING_DIR}
+            - ./:/core
+
+    composer:
+        image: ${COMPOSER_IMG}
+        volumes:
+            - ./:/core

@@ -3,15 +3,19 @@
     "require": {
         "grpc/grpc": "^v1.3.0",
         "spiral/php-grpc": "^1.0",
-        "timitao/grpc-contract": "*"
+        "timitao/grpc-php-contract": "dev-master",
+        "timitao/grpc-contract": "dev-master"
+    },
+    "require-dev": {
+        "wikimedia/composer-merge-plugin": "1.4.*"
     },
     "scripts": {
         "server": "rr-grpc serve -v -d",
         "post-install-cmd": [
-            "php -r \"copy('proto/service.proto', 'vendor/timitao/grpc-contract/proto/service.proto');\""
+            "php -r \"copy(__DIR__ . '/vendor/timitao/grpc-contract/proto/service.proto', __DIR__ . '/proto/service.proto');\""
         ],
         "post-update-cmd": [
-            "php -r \"copy('proto/service.proto', 'vendor/timitao/grpc-contract/proto/service.proto');\""
+            "php -r \"copy(__DIR__ . '/vendor/timitao/grpc-contract/proto/service.proto', __DIR__ . '/proto/service.proto');\""
         ]
     },
     "autoload": {
