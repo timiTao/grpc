@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Timitao\GRPC\Server;
+namespace TimiTao\GRPC\Server;
 
 use Spiral\GRPC;
 use TimiTao\GRPC\Contract\AddReply;

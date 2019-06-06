@@ -9,8 +9,8 @@
         "wikimedia/composer-merge-plugin": "1.4.*"
     },
     "autoload": {
-        "psr-4": {
-            "\\": "src/"
+        "psr-0": {
+            "": "src/"
         }
     }
 }

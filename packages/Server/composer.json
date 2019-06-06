@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Timitao\\GRPC\\Server\\": "src/"
+            "TimiTao\\GRPC\\Server\\": "src/"
         }
     }
 }

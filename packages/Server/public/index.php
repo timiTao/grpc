@@ -7,7 +7,7 @@ use Spiral\Goridge;
 use Spiral\GRPC\Server;
 use Spiral\RoadRunner;
 use TimiTao\GRPC\Contract\CalculatorInterface;
-use Timitao\GRPC\Server\Calculator;
+use TimiTao\GRPC\Server\Calculator;
 
 $server = new Server();
 $server->registerService(CalculatorInterface::class, new Calculator());
