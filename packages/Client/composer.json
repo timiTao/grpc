@@ -1,0 +1,14 @@
+{
+    "name": "timitao/grpc-client",
+    "require": {
+        "grpc/grpc": "^v1.3.0"
+    },
+    "scripts": {
+        "client": "php -d extension=grpc.so -d extension=protobuf.so client.php"
+    },
+    "autoload": {
+        "psr-4": {
+            "Timitao\\GRPC\\Client\\": "."
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "name": "timitao/grpc-server",
+    "require": {
+        "grpc/grpc": "^v1.3.0",
+        "spiral/php-grpc": "^1.0",
+        "timitao/grpc-contract": "*"
+    },
+    "scripts": {
+        "server": "rr-grpc serve -v -d",
+        "post-install-cmd": [
+            "php -r \"copy('proto/service.proto', 'vendor/timitao/grpc-contract/proto/service.proto');\""
+        ],
+        "post-update-cmd": [
+            "php -r \"copy('proto/service.proto', 'vendor/timitao/grpc-contract/proto/service.proto');\""
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Timitao\\GRPC\\Server\\": "src/"
+        }
+    }
+}
