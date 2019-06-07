@@ -2,7 +2,6 @@
     "name": "timitao/grpc-php-contract",
     "require": {
         "grpc/grpc": "^v1.3.0",
-        "spiral/php-grpc": "^1.0",
         "timitao/grpc-contract": "dev-master"
     },
     "require-dev": {

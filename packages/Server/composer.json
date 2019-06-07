@@ -9,15 +9,6 @@
     "require-dev": {
         "wikimedia/composer-merge-plugin": "1.4.*"
     },
-    "scripts": {
-        "server": "rr-grpc serve -v -d",
-        "post-install-cmd": [
-            "php -r \"copy(__DIR__ . '/vendor/timitao/grpc-contract/proto/service.proto', __DIR__ . '/proto/service.proto');\""
-        ],
-        "post-update-cmd": [
-            "php -r \"copy(__DIR__ . '/vendor/timitao/grpc-contract/proto/service.proto', __DIR__ . '/proto/service.proto');\""
-        ]
-    },
     "autoload": {
         "psr-4": {
             "TimiTao\\GRPC\\Server\\": "src/"

@@ -6,23 +6,34 @@ services:
         working_dir: ${WORKING_DIR}
         volumes:
             - ./packages/Client:${WORKING_DIR}
-            - ./:/core
+            - ./:${CORE_DIR}
+        depends_on:
+          - server
+          - composer
 
     server:
         build: ./packages/Server
         working_dir: ${WORKING_DIR}
-        command: 'rr-grpc serve -v -d'
+        command: './run.sh'
         volumes:
             - ./packages/Server:${WORKING_DIR}
-            - ./:/core
+            - ./:${CORE_DIR}
+        depends_on:
+            - composer
 
-    php_contract:
+    php-contract:
         build: ./packages/PHPContract
         volumes:
             - ./packages/PHPContract:${WORKING_DIR}
-            - ./:/core
+            - ./:${CORE_DIR}
+        depends_on:
+            - composer
 
     composer:
-        image: ${COMPOSER_IMG}
+        image: grpc_composer
+        build: ./packages/Composer
+        working_dir: ${WORKING_DIR}
+        command: './run-for-all.sh install --prefer-dist --no-interaction'
         volumes:
-            - ./:/core
+            - ./packages/Composer:${WORKING_DIR}
+            - ./:${CORE_DIR}

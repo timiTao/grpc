@@ -1,6 +1,7 @@
 {
     "name": "timitao/grpc-client",
     "require": {
+        "php": ">=7.1",
         "grpc/grpc": "^v1.3.0",
         "timitao/grpc-php-contract": "dev-master",
         "timitao/grpc-contract": "dev-master"
