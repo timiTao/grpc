@@ -1,7 +1,9 @@
 {
     "name": "timitao/grpc-client",
     "require": {
-        "grpc/grpc": "^v1.3.0"
+        "grpc/grpc": "^v1.3.0",
+        "timitao/grpc-php-contract": "dev-master",
+        "timitao/grpc-contract": "dev-master"
     },
     "require-dev": {
         "wikimedia/composer-merge-plugin": "1.4.*"
@@ -11,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Timitao\\GRPC\\Client\\": "."
+            "Timitao\\GRPC\\Client\\": "src"
         }
     }
 }

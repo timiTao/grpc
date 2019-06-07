@@ -1,6 +1,13 @@
 version: '2'
 services:
 
+    client:
+        build: ./packages/Client
+        working_dir: ${WORKING_DIR}
+        volumes:
+            - ./packages/Client:${WORKING_DIR}
+            - ./:/core
+
     server:
         build: ./packages/Server
         working_dir: ${WORKING_DIR}

@@ -8,13 +8,16 @@
         "phpspec/phpspec": "^5.1",
         "phpstan/phpstan": "^0.10",
         "squizlabs/php_codesniffer": "3.*",
-        "symplify/monorepo-builder": "^6.0"
+        "symplify/monorepo-builder": "^6.0",
+        "wikimedia/composer-merge-plugin": "1.4.*"
     },
     "autoload": {
+        "psr-0": {
+            "": "packages/PHPContract/src/"
+        },
         "psr-4": {
-            "Timitao\\GRPC\\Client\\": "packages/Client/.",
-            "Timitao\\GRPC\\Server\\": "packages/Server/src/",
-            "\\": "packages/PHPContract/src/"
+            "TimiTao\\GRPC\\Server\\": "packages/Server/src/",
+            "Timitao\\GRPC\\Client\\": "packages/Client/src"
         }
     },
     "replace": {
