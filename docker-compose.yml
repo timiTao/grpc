@@ -9,7 +9,6 @@ services:
             - ./:${CORE_DIR}
         depends_on:
           - server
-          - composer
 
     server:
         build: ./packages/Server
@@ -18,16 +17,12 @@ services:
         volumes:
             - ./packages/Server:${WORKING_DIR}
             - ./:${CORE_DIR}
-        depends_on:
-            - composer
 
     php-contract:
         build: ./packages/PHPContract
         volumes:
             - ./packages/PHPContract:${WORKING_DIR}
             - ./:${CORE_DIR}
-        depends_on:
-            - composer
 
     composer:
         image: grpc_composer
