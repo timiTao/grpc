@@ -14,16 +14,16 @@ My Proof of Concept to use GRPC with at least 2 languages.
 
 First, as I have a race here `composer` vs (`client` & `server`), need manually run composer:
 ```
-docker-compose run composer
+make composer-install
 ```
 
 This will initialize all composer dependency.
 
 ### Run
 
-Second, we can run `Client` vs `Server`
+Second, we can run `Client` vs `Server` test
 ```
-docker-compose up
+make run-test
 ```
 
 # Sources

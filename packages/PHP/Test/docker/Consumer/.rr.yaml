@@ -1,0 +1,7 @@
+grpc:
+    listen: "tcp://:9001"
+    proto: "*"
+    workers:
+        command: "php index.php"
+        pool:
+            numWorkers: 1

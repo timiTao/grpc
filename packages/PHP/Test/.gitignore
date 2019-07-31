@@ -1,0 +1,3 @@
+vendor
+docker/Consumer/output
+docker/Producer/input

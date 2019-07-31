@@ -1,12 +1,17 @@
 <?php
 
-require dirname(__FILE__) . '/vendor/autoload.php';
+declare(strict_types = 1);
+
+require getenv('VENDOR_AUTOLOAD');
 
 use TimiTao\GRPC\Contract\AddReply;
 use TimiTao\GRPC\Contract\AddRequest;
 use TimiTao\GRPC\Contract\CalculatorClient;
 
-$client = new CalculatorClient("server:9001", [
+$server = getenv('CONSUMER_HOST');
+$port = getenv('CONSUMER_PORT');
+
+$client = new CalculatorClient(sprintf('%s:%s', $server, $port), [
     "credentials" => Grpc\ChannelCredentials::createInsecure(),
 ]);
 

@@ -1,29 +1,6 @@
 version: '2'
+
 services:
-
-    client:
-        build: ./packages/Client
-        working_dir: ${WORKING_DIR}
-        volumes:
-            - ./packages/Client:${WORKING_DIR}
-            - ./:${CORE_DIR}
-        depends_on:
-          - server
-
-    server:
-        build: ./packages/Server
-        working_dir: ${WORKING_DIR}
-        command: './run.sh'
-        volumes:
-            - ./packages/Server:${WORKING_DIR}
-            - ./:${CORE_DIR}
-
-    php-contract:
-        build: ./packages/PHPContract
-        volumes:
-            - ./packages/PHPContract:${WORKING_DIR}
-            - ./:${CORE_DIR}
-
     composer:
         image: grpc_composer
         build: ./packages/Composer
@@ -31,4 +8,11 @@ services:
         command: './run-for-all.sh install --prefer-dist --no-interaction'
         volumes:
             - ./packages/Composer:${WORKING_DIR}
+            - ./:${CORE_DIR}
+
+    php_client_generator:
+        build: ./packages/PHPClientCompile/
+        working_dir: ${WORKING_DIR}
+        volumes:
+            - ./packages/PHPClientCompile/:${WORKING_DIR}
             - ./:${CORE_DIR}

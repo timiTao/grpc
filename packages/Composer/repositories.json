@@ -1,8 +1,8 @@
 {
   "repositories": [
     { "type": "path", "url": "/core/packages/Contract", "options": {"symlink": false}},
-    { "type": "path", "url": "/core/packages/PHPContract", "options": {"symlink": false}},
-    { "type": "path", "url": "/core/packages/Server", "options": {"symlink": false}},
-    { "type": "path", "url": "/core/packages/Client", "options": {"symlink": false}}
+    { "type": "path", "url": "/core/packages/PHP/PHPContract", "options": {"symlink": false}},
+    { "type": "path", "url": "/core/packages/PHP/Server", "options": {"symlink": false}},
+    { "type": "path", "url": "/core/packages/PHP/Test", "options": {"symlink": false}}
   ]
 }

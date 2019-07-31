@@ -1,0 +1,29 @@
+version: '2'
+services:
+
+    producer:
+        build: ./docker/Producer
+        working_dir: ${WORKING_DIR}
+        volumes:
+            - ./docker/Producer:${WORKING_DIR}
+            - ./vendor:/vendor
+            - ./../../../../:${CORE_DIR}
+        depends_on:
+            - consumer
+        env_file:
+            - .env
+        environment:
+            - CONSUMER_HOST=consumer
+            - CONSUMER_PORT=9001
+        command: './run.sh'
+
+    consumer:
+        build: ./docker/Consumer
+        working_dir: ${WORKING_DIR}
+        command: './run.sh'
+        volumes:
+            - ./docker/Consumer:${WORKING_DIR}
+            - ./vendor:/vendor
+            - ./../../../:${CORE_DIR}
+        env_file:
+            - .env

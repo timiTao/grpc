@@ -1,0 +1,14 @@
+{
+    "name": "timitao/grpc-php-contract-test",
+    "type": "project",
+    "require": {
+        "php": ">=7.1",
+        "timitao/grpc-contract": "dev-master",
+        "timitao/grpc-php-contract": "dev-master",
+        "timitao/grpc-server": "dev-master"
+    },
+    "require-dev": {
+        "behat/behat": "3.4.*",
+        "wikimedia/composer-merge-plugin": "1.4.*"
+    }
+}
