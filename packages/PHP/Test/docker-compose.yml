@@ -1,8 +1,8 @@
 version: '2'
 services:
-
     producer:
         build: ./docker/Producer
+        container_name: ${PRODUCER_LABEL}
         working_dir: ${WORKING_DIR}
         volumes:
             - ./docker/Producer:${WORKING_DIR}
@@ -19,11 +19,12 @@ services:
 
     consumer:
         build: ./docker/Consumer
+        container_name: ${CONSUMER_LABEL}
         working_dir: ${WORKING_DIR}
         command: './run.sh'
         volumes:
             - ./docker/Consumer:${WORKING_DIR}
             - ./vendor:/vendor
-            - ./../../../:${CORE_DIR}
+            - ./../../../../:${CORE_DIR}
         env_file:
             - .env

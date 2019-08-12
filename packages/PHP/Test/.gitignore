@@ -1,3 +1,5 @@
 vendor
+docker/Consumer/input
 docker/Consumer/output
 docker/Producer/input
+docker/Producer/output
