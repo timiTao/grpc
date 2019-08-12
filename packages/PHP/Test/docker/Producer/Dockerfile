@@ -7,4 +7,3 @@ RUN pecl install grpc
 RUN echo 'extension=grpc.so' > /etc/php/7.2/php.ini
 RUN pecl install protobuf
 RUN echo 'extension=protobuf.so' >> /etc/php/7.2/php.ini
-ENTRYPOINT "/app/run.sh"
